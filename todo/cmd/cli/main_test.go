@@ -51,7 +51,7 @@ func TestTodoCli(t *testing.T) {
 	t.Run("List Tasks", func(t *testing.T) {
 		cmd := exec.Command(cmdPath, "-list")
 		out, err := cmd.CombinedOutput()
-		expected := task + "\n"
+		expected := fmt.Sprintf(" 1: %s\n", task)
 
 		if err != nil {
 			t.Fatal(err)
